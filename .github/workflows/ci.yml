@@ -35,4 +35,4 @@ jobs:
     - run: npm run start
     - name: Upload to S3
       run: |
-        aws s3 sync pageShot.png s3://bonango.io-screenshots
+        aws s3 cp pageShot.png s3://bonango.io-screenshots
