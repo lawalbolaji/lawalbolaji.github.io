@@ -10,4 +10,4 @@ This is achieved by:
 
 The image will be updated automatically everytime there is a new commit on the project repo.
 
-![This is an image of the live website](https://github.com/lawalbolaji/lawalbolaji.github.io/blob/main/pageShot.png)
+![Live image of site](https://s3.us-east-2.amazonaws.com/bonango.io-screenshots/pageShot.png)
