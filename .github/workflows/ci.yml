@@ -3,8 +3,6 @@ name: Node.js CI
 on:
   push:
     branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
 
 jobs:
   build:
@@ -22,7 +20,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm run start
     - id: install-aws-cli
       uses: unfor19/install-aws-cli-action@v1
       with:
@@ -34,6 +31,8 @@ jobs:
         aws-region: us-east-2
         aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
         aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+    - run: rm pageShot.png
+    - run: npm run start
     - name: Upload to S3
       run: |
         aws s3 sync pageShot.png s3://bonango.io-screenshots
