@@ -27,6 +27,12 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: node awsClient.js
+      inputs:
+        accessKeyId:
+          description: 'Acess Key ID'
+          required: true
+        secretAccessKey:
+          description: 'Secret Access Key'
       with:
         accessKeyId: ${{secrets.AWS_ACCESS_KEY_ID}}
         secretAccessKey: ${{secrets.AWS_SECRET_ACCESS_KEY}}
