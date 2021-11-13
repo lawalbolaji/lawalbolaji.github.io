@@ -1,7 +1,7 @@
 // load node env variables
 require('dotenv').config();
 
-console.log(`loaded arguments: ${process.env['AWS_ACCESS_KEY_ID']}`);
+console.log(`loaded arguments: ${process.env['AWS_ACCESS_KEY_ID']}\n\t\t${process.env['AWS_SECRET_ACCESS_KEY']}`);
 
 // load awsC s3Client and PutBoject Command
 const { S3Client } = require('@aws-sdk/client-s3');
@@ -10,7 +10,7 @@ const { PutObjectCommand } = require('@aws-sdk/client-s3');
 // configure aws s3 client
 const REGION = process.env['AWS_DEFAULT_REGION'] || 'us-east-2';
 const AWS_ACCESS_KEY_ID = process.env['AWS_ACCESS_KEY_ID'];
-const AWS_SECRET_ACCESS_KEY = process.env['AWS_SECRET_ACCESS_KEY'];
+const AWS_SECRET_ACCESS_KEY = process.env['AWS_SECRET_ACCESS_KEY'] || process.env['AWS_SECRET_ACESS_KEY'];
 const fileName = 'pageShot.png';
 const s3Client = new S3Client({
     region: REGION,
