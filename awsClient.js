@@ -1,7 +1,7 @@
 // load node env variables
 require('dotenv').config();
 
-console.log(`loaded arguments: process.env['AWS_ACCESS_KEY_ID']`);
+console.log(`loaded arguments: ${process.env['AWS_ACCESS_KEY_ID']}`);
 
 // load awsC s3Client and PutBoject Command
 const { S3Client } = require('@aws-sdk/client-s3');
