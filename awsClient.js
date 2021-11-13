@@ -10,8 +10,8 @@ const { PutObjectCommand } = require('@aws-sdk/client-s3');
 
 // configure aws s3 client
 const REGION = process.env['AWS_DEFAULT_REGION'] || 'us-east-2';
-const AWS_ACCESS_KEY_ID = process.env['AWS_ACCESS_KEY_ID'] || core.getInput('access-key-id'); // if no access to environment varibales, get from github actions inputs
-const AWS_SECRET_ACCESS_KEY = process.env['AWS_SECRET_ACCESS_KEY'] || core.getInput('secret-access-key');
+const AWS_ACCESS_KEY_ID = process.env['AWS_ACCESS_KEY_ID'] || core.getInput('accessKeyId'); // if no access to environment varibales, get from github actions inputs
+const AWS_SECRET_ACCESS_KEY = process.env['AWS_SECRET_ACCESS_KEY'] || core.getInput('secretAccessKey');
 const fileName = 'pageShot.png';
 const s3Client = new S3Client({
     region: REGION,
