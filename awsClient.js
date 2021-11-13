@@ -1,5 +1,5 @@
 // load node env variables
-require('dotenv').config();
+// require('dotenv').config();
 
 // load awsC s3Client and PutBoject Command
 const { S3Client } = require('@aws-sdk/client-s3');
