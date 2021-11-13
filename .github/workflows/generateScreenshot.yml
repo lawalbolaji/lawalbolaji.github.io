@@ -20,11 +20,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - run: node awsClient.js
-      inputs:
-        accessKeyId:
-          description: 'Acess Key ID'
-          default: '${{secrets.AWS_ACCESS_KEY_ID}}'
-        secretAccessKey:
-          description: 'Secret Access Key'
-          default: '${{secrets.AWS_SECRET_ACCESS_KEY}}'
+    - run: node awsClient.js '${{secrets.AWS_ACCESS_KEY_ID}}' '${{secrets.AWS_SECRET_ACCESS_KEY}}'
+      # inputs:
+      #   accessKeyId:
+      #     description: 'Acess Key ID'
+      #     default: '${{secrets.AWS_ACCESS_KEY_ID}}'
+      #   secretAccessKey:
+      #     description: 'Secret Access Key'
+      #     default: '${{secrets.AWS_SECRET_ACCESS_KEY}}'
