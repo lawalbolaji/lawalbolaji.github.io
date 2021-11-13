@@ -1,13 +1,23 @@
 name: Manually triggered workflow
 
-on:
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       accessKeyId:
+#         description: 'Acess Key ID'
+#         required: true
+#       secretAccessKey:
+#         description: 'Secret Access Key'
+
+on: 
   workflow_dispatch:
     inputs:
-      accessKeyId:
-        description: 'Acess Key ID'
+      logLevel:
+        description: 'Log level'     
         required: true
-      secretAccessKey:
-        description: 'Secret Access Key'
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 
 jobs:
   build:
