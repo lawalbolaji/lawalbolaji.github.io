@@ -30,9 +30,7 @@ jobs:
       inputs:
         accessKeyId:
           description: 'Acess Key ID'
-          required: true
           default: '${{secrets.AWS_ACCESS_KEY_ID}}'
         secretAccessKey:
           description: 'Secret Access Key'
-          required: true
           default: '${{secrets.AWS_SECRET_ACCESS_KEY}}'
