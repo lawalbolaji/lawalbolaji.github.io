@@ -1,8 +1,6 @@
 // load node env variables
 require('dotenv').config();
 
-console.log(`loaded arguments: ${process.env['AWS_ACCESS_KEY_ID']}\n\t\t${process.env['AWS_SECRET_ACCESS_KEY']}`);
-
 // load awsC s3Client and PutBoject Command
 const { S3Client } = require('@aws-sdk/client-s3');
 const { PutObjectCommand } = require('@aws-sdk/client-s3');
@@ -55,7 +53,7 @@ async function saveImage(screenshot) {
     // configure params for putObject Command
     const params = {
         Bucket: "bonango.io-screenshots",
-        Key: fileName,
+        Key: 'pageShot.png',
         Body: screenshot,
         ContentType: "image/png",
         ContentDisposition: "inline"
