@@ -11,8 +11,6 @@ on:
         description: 'Secret Access Key'
         required: true
         default: ''
-  # push:
-  #   branches: [ $default-branch ]
 
 jobs:
   build:
