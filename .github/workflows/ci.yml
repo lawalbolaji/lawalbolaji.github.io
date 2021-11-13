@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       access-key-id:
+        description: 'Acess Key ID'
         required: true
-        default: ${{secrets.AWS_ACCESS_KEY_ID}}
+        default: ''
       secret-access-key:
-        description: 'home address'
+        description: 'Secret Access Key'
         required: true
-        default: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        default: ''
   # push:
   #   branches: [ $default-branch ]
 
@@ -31,3 +32,6 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: node awsClient.js
+        with:
+          access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
