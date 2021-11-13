@@ -4,6 +4,8 @@ require('dotenv').config();
 // load command line args from actions/core
 const args = process.argv.slice(2);
 
+console.log(`Arguments passed in: ${args}`);
+
 // load awsC s3Client and PutBoject Command
 const { S3Client } = require('@aws-sdk/client-s3');
 const { PutObjectCommand } = require('@aws-sdk/client-s3');
