@@ -53,7 +53,7 @@ async function saveImage(screenshot) {
     // configure params for putObject Command
     const params = {
         Bucket: "bonango.io-screenshots",
-        Key: 'pageShot.png',
+        Key: fileName,
         Body: screenshot,
         ContentType: "image/png",
         ContentDisposition: "inline"
