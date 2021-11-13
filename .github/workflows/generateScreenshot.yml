@@ -1,7 +1,9 @@
-name: Manually triggered workflow
+name: Screenshot CI
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - $default-branch
 
 jobs:
   build:
