@@ -6,11 +6,9 @@ on:
       accessKeyId:
         description: 'Acess Key ID'
         required: true
-        default: ''
       secretAccessKey:
         description: 'Secret Access Key'
         required: true
-        default: ''
 
 jobs:
   build:
