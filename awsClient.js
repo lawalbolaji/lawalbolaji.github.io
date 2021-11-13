@@ -1,19 +1,14 @@
 // load node env variables
 require('dotenv').config();
 
-// load command line args from actions/core
-const args = process.argv.slice(2);
-
-console.log(`Arguments passed in: ${args}`);
-
 // load awsC s3Client and PutBoject Command
 const { S3Client } = require('@aws-sdk/client-s3');
 const { PutObjectCommand } = require('@aws-sdk/client-s3');
 
 // configure aws s3 client
 const REGION = process.env['AWS_DEFAULT_REGION'] || 'us-east-2';
-const AWS_ACCESS_KEY_ID = process.env['AWS_ACCESS_KEY_ID'] || args[0]; // if no access to environment varibales, get from github actions inputs
-const AWS_SECRET_ACCESS_KEY = process.env['AWS_SECRET_ACCESS_KEY'] || args[1];
+const AWS_ACCESS_KEY_ID = process.env['AWS_ACCESS_KEY_ID'];
+const AWS_SECRET_ACCESS_KEY = process.env['AWS_SECRET_ACCESS_KEY'];
 const fileName = 'pageShot.png';
 const s3Client = new S3Client({
     region: REGION,
