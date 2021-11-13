@@ -20,8 +20,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    - name: create env file
-      run: |
-        touch .env
-        echo -e AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}}\nAWS_SECRET_ACCESS_KEY=${{secrets.AWS_ACCESS_KEY_ID}}  >> .env
     - run: node awsClient.js
+      env:
+        CI: true
+        AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+        nAWS_SECRET_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY_ID}}
